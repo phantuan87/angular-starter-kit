@@ -95,7 +95,7 @@ gulp.task('resources', function () {
 });
 
 gulp.task('clean', function () {
-  return gulp.src(['dist', '.tmp'], {read: false}).pipe($.rimraf());
+  return gulp.src(['.tmp', 'dist'], {read: false}).pipe($.rimraf());
 });
 
-gulp.task('build', ['clean', 'images', 'fonts', 'resources', 'minify']);
+gulp.task('build', ['images', 'fonts', 'resources', 'minify']);
