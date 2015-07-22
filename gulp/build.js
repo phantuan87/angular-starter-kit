@@ -1,10 +1,10 @@
 'use strict';
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var mainBowerFiles = require('main-bower-files');
-var eventStream = require('event-stream');
-var saveLicense = require('uglify-save-license');
+var conf = require('./conf');
+var $ = require('gulp-load-plugins')({
+  pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'event-stream']
+});
 
 /* 
 templates Task
@@ -50,21 +50,26 @@ gulp.task('minify', ['scripts', 'styles', 'templates'], function() {
 		.pipe(assets)
     .pipe($.rev()) // Rename the concatenated files
 		.pipe($.if('**/*.js', $.ngAnnotate()))
-		.pipe($.if('**/*.js', $.uglify({preserveComments: saveLicense})))
+		.pipe($.if('**/*.js', $.uglify({preserveComments: $.uglifySaveLicense}))).on('error', conf.errorHandler('Uglify'))
     .pipe($.if('**/*.css', $.replace('../img/', '../images/')))
     .pipe($.if('**/*.css', $.replace('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', 'fonts')))
     .pipe($.if('**/*.css', $.csso()))
 		.pipe(assets.restore())
     .pipe($.useref())
     .pipe($.revReplace()) // Substitute in new filenames
+    .pipe($.minifyHtml({
+      empty : true,
+      spare : true,
+      quotes: true
+    }))
     .pipe(gulp.dest('dist'))
     .pipe($.size());
 });
 
 gulp.task('images', function () {
-	return eventStream.merge(
+	return $.eventStream.merge(
 		gulp.src('app/images/**/*'),
-		gulp.src(mainBowerFiles())
+		gulp.src($.mainBowerFiles())
 			.pipe($.filter('**/*.{jpg,jpeg,png,gif}'))
 			.pipe($.flatten())
 	)
@@ -73,10 +78,10 @@ gulp.task('images', function () {
 });
 
 gulp.task('fonts', function () {
-  	return eventStream.merge(
+  	return $.eventStream.merge(
     	gulp.src('app/fonts/**/*'),
-    	gulp.src(mainBowerFiles())
-      	.pipe($.filter('**/*.{woff,eot,ttf,svg}'))
+    	gulp.src($.mainBowerFiles())
+      	.pipe($.filter('**/*.{woff,woff2,eot,ttf,svg}'))
       	.pipe($.flatten())
   	)
     	.pipe(gulp.dest('dist/fonts'))
