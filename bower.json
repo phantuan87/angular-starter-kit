@@ -1,0 +1,37 @@
+{
+  "name": "ng_pim",
+  "version": "0.0.1",
+  "homepage": "https://github.com/phantuan87/ng_pim",
+  "authors": [
+    "Tuan Phan"
+  ],
+  "description": "Personal Information Management",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "pim"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-bootstrap": "~0.13.0",
+    "angular-ui-router": "~0.2.15",
+    "modernizr": "~2.8.3",
+    "json3": "~3.3.2",
+    "bootstrap-sass": "~3.3.5",
+    "fontawesome": "~4.3.0",
+    "lodash": "~3.10.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.3"
+  }
+}
