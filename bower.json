@@ -1,17 +1,17 @@
 {
   "name": "ng_pim",
   "version": "0.0.1",
-  "homepage": "https://github.com/phantuan87/ng_pim",
+  "homepage": "https://github.com/phantuan87/angular-starter-kit",
   "authors": [
     "Tuan Phan"
   ],
-  "description": "Personal Information Management",
+  "description": "Angular Starter Kit",
   "main": "index.html",
   "moduleType": [
     "node"
   ],
   "keywords": [
-    "pim"
+    "angular"
   ],
   "license": "MIT",
   "ignore": [
