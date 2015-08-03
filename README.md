@@ -12,7 +12,7 @@ Starting points for building a new Angular single page app.
 # Features included in gulpfile
 - seref : allow configuration of your files in comments of your HTML file
 - ngAnnotate : convert simple injection to complete syntax to be minification proof
-- angular-filesort: ???
+- angular-filesort: Automatically sort AngularJS app files depending on module definitions and usage
 - ng-html2js: pre-load your HTML code into the $templateCache. Please **change your model name** to make it work correctly.
 - uglify : optimize all your JavaScript
 - csso: optimize all your CSS
