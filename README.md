@@ -15,7 +15,7 @@ Starting points for building a new Angular single page app.
 - ng-html2js: pre-load your HTML code into the $templateCache. Please **change your model name** to make it work correctly.
 - uglify : optimize all your JavaScript
 - csso: optimize all your CSS
-- sass: compile sass file to css.
+- sass: compile SASS file to CSS.
 - autoprefixer: Prefix CSS with [Autoprefixer](https://github.com/postcss/autoprefixer-core)
 - jshint : JavaScript code linter
 - minify-html: Minify html with minimize.
