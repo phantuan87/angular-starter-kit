@@ -3,9 +3,9 @@ Starting points for building a new Angular single page app.
 
 # Getting Started
 
-- Install dependencies: `bash npm install`
-- Run `gulp serve` to launch default browser and watch for changes
-- Run `bower install --save <package>` to install frontend dependencies
+- Run `npm install` to install npm dependencies
+- Run `bower install` to install frontend dependencies
+- Run `gulp serve` to launch brower-sync and watch for any changes
 - Run `gulp serve:unit_test` to run the unit tests
 - Run `gulp serve:dist` to build your webapp for production 
 
